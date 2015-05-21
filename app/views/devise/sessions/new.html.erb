@@ -1,13 +1,17 @@
-<div class="booyah-box col-xs-8 col-xs-offset-2" >
-<h2>Log in</h2>
+<div class="booyah-box col-xs-6 col-xs-offset-3" >
+	<br />
+<div class="text-center"> 
+	<h2><u>Log in</u></h2>
+</div>
 <br /><br />
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email, required: false, autofocus: true %><br />
-    <%= f.input :password, required: false %><br />
+    <%= f.input :password, required: false %>
   </div>
-
+  <br />
+  <br />
   <div class="form-actions">
     <%= f.button :submit, "Log in", :class => 'btn btn-primary' %>
   </div>
