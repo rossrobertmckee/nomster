@@ -52,6 +52,28 @@
 
 
 
+<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
+      </div>
+
+    <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+      <div class="modal-body">
+        <%= f.input :caption %>
+        <%= f.input :picture %>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Upload Photo", :class => 'btn btn-primary' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -85,30 +107,13 @@
 	<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
   		Add a comment
 	</button>
+
+  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myPhotoModal">
+      Add a Photo
+  </button>
+
 </div>
 
-
-<div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
-      </div>
-
-    <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-      <div class="modal-body">
-        <%= f.input :caption %>
-        <%= f.input :picture %>
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= f.submit "Upload Photo", :class => 'btn btn-primary' %>
-      </div>
-    <% end %>
-    </div>
-  </div>
-</div>
 
 <div class="clear"></div>
 
@@ -124,3 +129,5 @@
     </blockquote>
   </div>
 <% end %>
+<br/><br/>
+<div class="clear"></div>
