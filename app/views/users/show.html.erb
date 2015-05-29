@@ -1,6 +1,15 @@
-<h1>Profile for: <%= @user.email %>!</h1>
+<div class="booyah-box">
+	<div class="col-xs-3">
+	<%= image_tag 'user.png' %>
+	</div>
+	<div class="col-xs-9">
+<h1>Profile for: <%= @user.email %></h1>
 <h3>Member since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+</br>
 <h4><%= @user.comments.count %> total comments</h4>
 <h4><%= @user.comments.where(:rating => '5_stars').count %> total 5 star reviews</h4>
+</div>
+<div class="clear"></div>
+</div>
 
 
