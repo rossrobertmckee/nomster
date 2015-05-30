@@ -3,8 +3,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script type="text/javascript">
     var locations = [
-      <% @places.each do |place| %>
-        <% if place == @places.last %>
+      <% @place.each do |place| %>
+        <% if place == @place.last %>
         ['<%= link_to place.name, place_path(place) %><br/><%= place.description %>', <%= place.latitude %>, <%= place.longitude %>, 4]
         <% else %>
         ['<%= link_to place.name, place_path(place) %><br/><%= place.description %>', <%= place.latitude %>, <%= place.longitude %>, 4],
