@@ -56,6 +56,10 @@ class PlacesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def maps
+		@place = Place.last
+	end
+
 private
 
 def place_params
