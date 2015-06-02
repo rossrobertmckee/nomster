@@ -57,7 +57,7 @@ class PlacesController < ApplicationController
 	end
 
 	def maps
-		@place = Place.last
+		@place = Place.all
 	end
 
 private
