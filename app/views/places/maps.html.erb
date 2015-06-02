@@ -2,6 +2,7 @@
 <div id="map_wrapper">
     <div id="map_canvas" class="mapping"></div>
 </div>
+
 <script>
 
 jQuery(function($) {
@@ -23,8 +24,10 @@ function initialize() {
     map.setTilt(45);
         
     // Multiple Markers
-    var markers = [
-             <%= @place.last.latitude %>, <%= @place.last.longitude %>
+      var markers = [
+      <% @place.each do |place| %>
+        ['<%= link_to place.name, place_path(place) %><br/><%= place.description %>', <%= place.latitude %>, <%= place.longitude %>],
+      <% end %>
     ];
                         
     // Info Window Content
@@ -56,12 +59,6 @@ function initialize() {
         // Automatically center the map fitting all markers on the screen
         map.fitBounds(bounds);
     }
-
-    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(14);
-        google.maps.event.removeListener(boundsListener);
-    });
     
 }
 
