@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
+ 
+
   # test "the truth" do
-  #   assert true
+  #   puts Comment.last.humanized_rating
   # end
+
+
 end
