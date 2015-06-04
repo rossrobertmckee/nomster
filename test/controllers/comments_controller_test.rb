@@ -6,11 +6,8 @@ class CommentsControllerTest < ActionController::TestCase
  		user = FactoryGirl.create(:user)
  		sign_in user
     	place = FactoryGirl.create(:place)
-		comment = FactoryGirl.create(:comment, user: user, place: place)
-	end
-
-	test "comment_me" do
-    	assert_equal 1, place.comment.count    
+		comment = FactoryGirl.create(:comment, place: place)
+    	assert_equal 1, comment.count    
     	assert_redirected_to places_path(place)
   end
 
