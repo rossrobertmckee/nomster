@@ -7,3 +7,4 @@ end
     password_confirmation "girlfactory"
   end
 end
+
