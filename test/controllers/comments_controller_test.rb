@@ -2,13 +2,13 @@ require 'test_helper'
 require 'factory_girl_rails'
 
 class CommentsControllerTest < ActionController::TestCase
-	setup do  
+	test "comment_create" do  
  		user = FactoryGirl.create(:user)
  		sign_in user
     	place = FactoryGirl.create(:place)
 		comment = FactoryGirl.create(:comment, place: place)
-    	assert_equal 1, comment.count    
-    	assert_redirected_to places_path(place)
+    	assert_not_nil comment    
+    	assert_redirected_to place_path(place)
   end
 
 end
