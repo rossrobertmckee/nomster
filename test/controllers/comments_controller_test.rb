@@ -7,7 +7,7 @@ class CommentsControllerTest < ActionController::TestCase
  		sign_in user
     	place = FactoryGirl.create(:place, :user => user)
 		comment = FactoryGirl.create(:comment, user: user, place: place)
+     	assert_redirected_to root_path(place)
     	assert_not_nil comment    
-    	assert_redirected_to place_path(place)
 	end
 end
